@@ -5,11 +5,27 @@
 
   /* photo carousel */
   const photos = [
-    "assets/39856859883_cef8b83fcd_z.jpg",
-    "assets/5550620402_56f2250c94_z.jpg", 
-    "assets/46821937061_4a6daeae90_z.jpg",
-    "assets/46096906674_b10c912d1c_z.jpg", 
-    "assets/46096802854_63774cea54_z.jpg",
+    "assets/portfolio/feature1_small.jpg",
+    "assets/portfolio/feature2_small.jpg",
+    "assets/portfolio/generalnews1_small.jpg",
+    "assets/portfolio/generalnews2_small.jpg",
+    "assets/portfolio/generalnews3_small.jpg",
+    "assets/portfolio/gfe10_small.jpg",
+    "assets/portfolio/gfe11_small.jpg",
+    "assets/portfolio/gfe1_small.jpg",
+    "assets/portfolio/gfe2_small.jpg",
+    "assets/portfolio/gfe3_small.jpg",
+    "assets/portfolio/gfe4_small.jpg",
+    "assets/portfolio/gfe5_small.jpg",
+    "assets/portfolio/gfe6_small.jpg",
+    "assets/portfolio/gfe7_small.jpg",
+    "assets/portfolio/gfe8_small.jpg",
+    "assets/portfolio/gfe9_small.jpg",
+    "assets/portfolio/portrait1_small.jpg",
+    "assets/portfolio/portrait2_small.jpg",
+    "assets/portfolio/sport1_small.jpg",
+    "assets/portfolio/sport2_small.jpg",
+    "assets/portfolio/sport3_small.jpg",
   ];
   const [left, photoContainer, right] = document.querySelector("#photo-carousel").children;
   const breadcrumbs = [];

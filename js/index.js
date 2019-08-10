@@ -6,30 +6,20 @@
   /* photo carousel */
   const photos = [
     "assets/portfolio/feature1_small.jpg",
-    "assets/portfolio/feature2_small.jpg",
-    "assets/portfolio/generalnews1_small.jpg",
-    "assets/portfolio/generalnews2_small.jpg",
     "assets/portfolio/generalnews3_small.jpg",
-    "assets/portfolio/gfe10_small.jpg",
-    "assets/portfolio/gfe11_small.jpg",
-    "assets/portfolio/gfe1_small.jpg",
     "assets/portfolio/gfe2_small.jpg",
     "assets/portfolio/gfe3_small.jpg",
     "assets/portfolio/gfe4_small.jpg",
-    "assets/portfolio/gfe5_small.jpg",
-    "assets/portfolio/gfe6_small.jpg",
-    "assets/portfolio/gfe7_small.jpg",
-    "assets/portfolio/gfe8_small.jpg",
-    "assets/portfolio/gfe9_small.jpg",
-    "assets/portfolio/portrait1_small.jpg",
     "assets/portfolio/portrait2_small.jpg",
     "assets/portfolio/sport1_small.jpg",
-    "assets/portfolio/sport2_small.jpg",
     "assets/portfolio/sport3_small.jpg",
   ];
   const [left, photoContainer, right] = document.querySelector("#photo-carousel").children;
+  const carousel = document.querySelector("#photo-carousel");
+  carousel.style.height = photoContainer.clientWidth * 0.67 + "px";
   const breadcrumbs = [];
-  let currentPhoto = ~~(photos.length / 2);
+  let currentPhoto = 0;
+  let timeout;
   photoContainer.style.backgroundImage = `url(${photos[currentPhoto]})`;
 
   photos.forEach((e, i) => {
@@ -38,9 +28,26 @@
     document.querySelector("#breadcrumbs").appendChild(crumb);
     breadcrumbs.push(crumb);
   });
+  
+  document.addEventListener("keydown", e => {
+    if (e.keyCode === 37) {
+      e.preventDefault();
+      slideLeft();
+    }
+    else if (e.keyCode === 39) {
+      e.preventDefault();
+      slideRight();
+    }
+  });
 
-  left.addEventListener("click", e => { 
-    e.preventDefault();
+  addEventListener("resize", e => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      carousel.style.height = photoContainer.clientWidth * 0.67 + "px";
+    }, 100);
+  });
+  
+  const slideLeft = () => {
     breadcrumbs[currentPhoto].className = "breadcrumb";
 
     if (--currentPhoto < 0) {
@@ -49,10 +56,9 @@
 
     breadcrumbs[currentPhoto].className = "breadcrumb-active";
     photoContainer.style.backgroundImage = `url(${photos[currentPhoto]})`;
-  });
+  };
 
-  right.addEventListener("click", e => { 
-    e.preventDefault();
+  const slideRight = () => {
     breadcrumbs[currentPhoto].className = "breadcrumb";
 
     if (++currentPhoto >= photos.length) {
@@ -61,6 +67,16 @@
 
     breadcrumbs[currentPhoto].className = "breadcrumb-active";
     photoContainer.style.backgroundImage = `url(${photos[currentPhoto]})`;
+  };
+
+  left.addEventListener("click", e => { 
+    e.preventDefault();
+    slideLeft();
+  });
+
+  right.addEventListener("click", e => { 
+    e.preventDefault();
+    slideRight();
   });
 
   /* set email address -- still easily scrapeable by dynamic crawlers */

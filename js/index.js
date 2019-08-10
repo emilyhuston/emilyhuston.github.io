@@ -14,14 +14,37 @@
     "assets/portfolio/sport1_small.jpg",
     "assets/portfolio/sport3_small.jpg",
   ];
-  const [left, photoContainer, right] = document.querySelector("#photo-carousel").children;
+  const [
+    left, photoContainer, spinner, right
+  ] = document.querySelector("#photo-carousel").children;
   const carousel = document.querySelector("#photo-carousel");
   carousel.style.height = photoContainer.clientWidth * 0.67 + "px";
+  spinner.style.height = photoContainer.clientWidth * 0.67 + "px";
+  spinner.style.width = photoContainer.clientWidth + "px";
   const breadcrumbs = [];
   let currentPhoto = 0;
   let timeout;
-  photoContainer.style.backgroundImage = `url(${photos[currentPhoto]})`;
-
+  
+  const loadImage = () => {
+    const image = new Image();
+    let loaded = false;
+    photoContainer.style.display = "none";
+    setTimeout(() => {
+      if (!loaded) {
+        spinner.style.display = "flex";
+      }
+    }, 500);
+    image.onload = () => {
+      loaded = true;
+      photoContainer.style.backgroundImage = `url(${photos[currentPhoto]})`;
+      spinner.style.display = "none";
+      photoContainer.style.display = "flex";
+    };
+    image.src = photos[currentPhoto];
+  };
+  
+  loadImage();
+    
   photos.forEach((e, i) => {
     const crumb = document.createElement("div");
     crumb.className = "breadcrumb" + (i === currentPhoto ? "-active" : "");
@@ -55,7 +78,7 @@
     }
 
     breadcrumbs[currentPhoto].className = "breadcrumb-active";
-    photoContainer.style.backgroundImage = `url(${photos[currentPhoto]})`;
+    loadImage();
   };
 
   const slideRight = () => {
@@ -66,7 +89,7 @@
     }
 
     breadcrumbs[currentPhoto].className = "breadcrumb-active";
-    photoContainer.style.backgroundImage = `url(${photos[currentPhoto]})`;
+    loadImage();
   };
 
   left.addEventListener("click", e => { 

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre:400,700&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre:400,700&display=swap');
 
 body {
   opacity: 0;
@@ -130,11 +130,44 @@ section#contact > p {
   background-position: center;
   width: 100%;
   height: 100%;
+  display: flex;
 }
 
 #photo-carousel a {
   border: 0 !important;
   padding: 0.8em;
+}
+
+@keyframes spin {
+  from {
+    transform: scale(0);
+  } 
+  to {
+    transform: scale(1);
+  }
+}
+
+#photo-carousel > div#spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#photo-carousel > div#spinner > div {
+  margin: 0.2em;
+  border-radius: 50%;
+  background: #777;
+  height: 10px;
+  width: 10px;
+  animation: spin alternate infinite 1s;
+}
+
+#photo-carousel > div#spinner > div:nth-child(2) {
+  animation-delay: -0.25s;
+}
+
+#photo-carousel > div#spinner > div:nth-child(3) {
+  animation-delay: -0.5s;
 }
 
 #breadcrumbs {
@@ -148,7 +181,7 @@ section#contact > p {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #333;
+  background: #999;
   margin: 0.2em;
   transition: all 0s;
 }
@@ -157,7 +190,7 @@ section#contact > p {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #333;
+  background: #777;
   margin: 0.2em;
 }
 
@@ -233,5 +266,12 @@ i:hover {
 
   section#contact > p {
     text-align: left;
+  }
+  
+  #photo-carousel a {
+    border: 0 !important;
+    padding: 0.5em;
+    border: 1px solid black;
+    font-size: 0.5em;
   }
 }

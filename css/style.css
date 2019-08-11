@@ -216,6 +216,11 @@ i:hover {
   color: #777;
 }
 
+.crab {
+  width: 30px;
+  padding-right: 10px;
+}
+
 @media (max-width: 650px) {
   #landing {
     align-items: flex-start;

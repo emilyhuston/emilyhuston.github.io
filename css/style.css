@@ -103,6 +103,16 @@ body {
   padding: 1em;
 }
 
+section#writing ul {
+  padding: 0;  
+}
+
+section#writing li {
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;  
+  list-style-type: none;
+}
+
 section#photography > header {
   justify-content: flex-end;
 }

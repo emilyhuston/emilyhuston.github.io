@@ -5,14 +5,16 @@
 
   /* photo carousel */
   const photos = [
-    "assets/portfolio/feature1_small.jpg",
-    "assets/portfolio/generalnews3_small.jpg",
-    "assets/portfolio/gfe2_small.jpg",
-    "assets/portfolio/gfe3_small.jpg",
-    "assets/portfolio/gfe4_small.jpg",
-    "assets/portfolio/portrait2_small.jpg",
-    "assets/portfolio/sport1_small.jpg",
-    "assets/portfolio/sport3_small.jpg",
+    "assets/portfolio/01.jpg",
+    "assets/portfolio/02.jpg",
+    "assets/portfolio/03.jpg",
+    "assets/portfolio/04.jpg",
+    "assets/portfolio/05.jpg",
+    "assets/portfolio/06.jpg",
+    "assets/portfolio/07.jpg",
+    "assets/portfolio/08.jpg",
+    "assets/portfolio/09.jpg",
+    "assets/portfolio/10.jpg",
   ];
   const [
     left, photoContainer, spinner, right

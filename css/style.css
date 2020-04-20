@@ -194,6 +194,7 @@ section#writing li {
 footer {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
@@ -214,8 +215,7 @@ i:hover {
 }
 
 .crab {
-  width: 30px;
-  padding-right: 10px;
+  height: 25px;
 }
 
 @media (max-width: 650px) {
@@ -245,27 +245,9 @@ i:hover {
   #main section {
     width: 100%;
   }
-
-  #main header {
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
 }
 
 @media (max-width: 500px) {
-  #main section > header {
-    justify-content: flex-start;
-  }
-
-  #main section:nth-child(2) > header {
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-  }
-
-  section#contact > p {
-    text-align: left;
-  }
-  
   #photo-carousel a {
     border: 0 !important;
     padding: 0.5em;

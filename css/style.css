@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Merriweather:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;1,400&family=Space+Grotesk:wght@500&display=swap');
 
 body {
   opacity: 0;
-  font-family: 'Lato', serif;
+  font-family: 'Crimson Pro', serif;
   margin: 0;
   height: 100%;
   overflow-x: hidden;
@@ -10,8 +10,16 @@ body {
   color: #000;
 }
 
+img {
+  max-width: 100%;
+}
+
+p {
+  line-height: 1.4em;
+  max-width: 620px;
+}
+
 #landing {
-  font-family: 'Lato', serif;
   cursor: default;
   min-height: 100vh;
   display: flex;
@@ -21,13 +29,14 @@ body {
   font-size: 1.8em;
   overflow: hidden;
   background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.5)),
-              url(../assets/cover.jpg);
+              url(../assets/Cover.jpg);
   background-size: cover;
 }
 
 #landing h1 {
+  font-family: 'Space Grotesk', sans-serif;
   color: #eee;
-  font-size: 2.4em;
+  font-size: 2.3em;
   margin: 0.5em;
 }
 
@@ -53,7 +62,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 1.1em;
+  font-size: 1.3em;
   margin: 1em;
 }
 
@@ -74,7 +83,6 @@ body {
 
 #main section {
   max-width: 1000px;
-  width: 70%;
   padding-top: 1em;
   padding-bottom: 1em;
 }
@@ -86,7 +94,7 @@ body {
 }
 
 #main section > header > h2 {
-  font-family: 'Merriweather', serif;
+  font-family: 'Space Grotesk', serif;
   font-size: 1.8em;
   margin: 0;
 }
@@ -102,16 +110,6 @@ body {
   padding: 1em;
 }
 
-section#writing ul {
-  padding: 0;  
-}
-
-section#writing li {
-  padding-top: 0.3em;
-  padding-bottom: 0.3em;  
-  list-style-type: none;
-}
-
 #photo-carousel {
   display: flex;
   align-items: center;
@@ -122,6 +120,7 @@ section#writing li {
 }
 
 #photo-carousel div#photo-container {
+  min-width: 700px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;

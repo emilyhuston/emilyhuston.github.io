@@ -5,16 +5,38 @@
 
   /* photo carousel */
   const photos = [
-    "assets/portfolio/01.jpg",
-    "assets/portfolio/02.jpg",
-    "assets/portfolio/03.jpg",
-    "assets/portfolio/04.jpg",
-    "assets/portfolio/05.jpg",
-    "assets/portfolio/06.jpg",
-    "assets/portfolio/07.jpg",
-    "assets/portfolio/08.jpg",
-    "assets/portfolio/09.jpg",
-    "assets/portfolio/10.jpg",
+    "assets/portraits/Portfolio-28_small.jpg",
+    "assets/portraits/Portfolio-44_small.jpg",
+    "assets/portraits/Portfolio-34_small.jpg",
+    "assets/portraits/Portfolio-23_small.jpg",
+    "assets/portraits/Portfolio-39_small.jpg",
+    "assets/portraits/Portfolio-45_small.jpg",
+    "assets/portraits/Portfolio-43_small.jpg",
+    "assets/portraits/Portfolio-52_small.jpg",
+    "assets/portraits/Portfolio-12_small.jpg",
+    "assets/portraits/Portfolio-32_small.jpg",
+    "assets/portraits/Portfolio-10_small.jpg",
+    "assets/portraits/Portfolio-43_small.jpg",
+    "assets/portraits/Portfolio-12_small.jpg",
+    "assets/portraits/Portfolio-29_small.jpg",
+    "assets/portraits/Portfolio-31_small.jpg",
+    "assets/portraits/Portfolio-47_small.jpg",
+    "assets/portraits/Portfolio-59_small.jpg",
+    "assets/portraits/Portfolio-42_small.jpg",
+    "assets/portraits/Portfolio-38_small.jpg",
+    "assets/portraits/Portfolio-25_small.jpg",
+    "assets/portraits/Portfolio-36_small.jpg",
+    "assets/portraits/Portfolio-20_small.jpg",
+    "assets/portraits/Portfolio-48_small.jpg",
+    "assets/portraits/Portfolio-41_small.jpg",
+    "assets/portraits/Portfolio-16_small.jpg",
+    "assets/portraits/Portfolio-49_small.jpg",
+    "assets/portraits/Portfolio-11_small.jpg",
+    "assets/portraits/Portfolio-53_small.jpg",
+    "assets/portraits/Portfolio-35_small.jpg",
+    "assets/portraits/Portfolio-18_small.jpg",
+    "assets/portraits/Portfolio-04_small.jpg",
+    "assets/portraits/Portfolio-58_small.jpg",
   ];
   const [
     left, photoContainer, spinner, right
@@ -122,7 +144,7 @@
   }
 
   /* set smooth scrolling */
-  ["writing", "photography", "contact"].forEach(e => {
+  ["photography", "contact"].forEach(e => {
     document.querySelector(`#link-${e}`).addEventListener("click", event => { 
       event.preventDefault();
       const destination = document.querySelector(`#${e}`)
@@ -133,5 +155,12 @@
       event.preventDefault();
       window.scrollTo({top: 0, behavior: "smooth"});
     });
+  });
+  
+  document.querySelector(`#link-portfolio`).addEventListener("click", event => { 
+    event.preventDefault();
+    const destination = document.querySelector(`#portfolio`)
+                                .getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({top: destination, behavior: "smooth"});
   });
 })();

@@ -13,4 +13,4 @@ https://github.com/emilyhuston/emilyhuston.github.io/
 
 And, soon, you can see my customized homepage at:
 
-http://emilyhuston.github.io/
+https://emilyhuston.github.io/

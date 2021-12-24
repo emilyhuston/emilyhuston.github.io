@@ -1,12 +1,6 @@
 (function () {
   "use strict";
 
-  /* show the site after everything loads */
-  document.body.style.opacity = 0;
-  window.onload = () => {
-    document.body.style.opacity = 1;
-  };
-
   /* set email address -- still easily scrapeable by dynamic crawlers */
   const addr = [
     100, 108, 104, 107, 120, 103, 116, 114, 115, 110, 109, 48, 

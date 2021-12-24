@@ -33,4 +33,6 @@ https://emilyhuston.github.io/
 
 ## TODO
 
-- make mobile first
+- make CSS mobile first
+- photos should be wider at 600px cutoff (use width and height props, thumbs 500px [but show at 300px for mid-sized displays], full images could be 2000 px wide)
+- find out why smooth scrolling isn't working on chrome

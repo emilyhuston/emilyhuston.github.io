@@ -10,7 +10,7 @@ ref: https://stackoverflow.com/a/451580
 import os, sys
 from PIL import Image
 
-basewidth = 1000 # you might want to change this (pixels)
+basewidth = 1024 # you might want to change this (pixels)
 
 for infile in os.listdir("."):
     if infile.lower().endswith(".jpg"):

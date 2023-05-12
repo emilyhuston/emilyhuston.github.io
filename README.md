@@ -23,6 +23,21 @@ Live site: <https://emilyhuston.github.io/>
 - [Single-page app POC without JS](https://john-doe.neocities.org/) might be interesting to try
 
 
+## Development
+
+Install Python if not present.
+
+Run a Python server from the root directory in your terminal to serve assets:
+
+```
+python3 -m http.server
+```
+
+Navigate your browser to <http://localhost:8000>
+
+See the [`utils`](/utils) directory for Python scripts that you can use to batch resize images and generate HTML for fslightbox-ready HTML.
+
+
 ## TODO
 
 - Add a photographer subtitle below main header

@@ -10,19 +10,26 @@ ref: https://stackoverflow.com/a/451580
 import os, sys
 from PIL import Image
 
-basewidth = 1024 # you might want to change this (pixels)
+widths = 300, 1024
+extensions = "_sm.jpg", ".jpg"
+input_path = "."
+output_path = "./out"
+os.makedirs(output_path)
 
-for infile in os.listdir("."):
+if input_path == output_path:
+    raise Exception("input path must be different than output path")
+
+for infile in os.listdir(input_path):
     if infile.lower().endswith(".jpg"):
-        outfile = os.path.splitext(infile)[0] + "_small.jpg"
+        for width, ext in zip(widths, extensions):
+            outfile = os.path.splitext(infile)[0] + ext
 
-        if infile != outfile:
             try:
                 img = Image.open(infile)
-                wpercent = (basewidth/float(img.size[0]))
+                wpercent = (width/float(img.size[0]))
                 hsize = int((float(img.size[1])*float(wpercent)))
-                img = img.resize((basewidth,hsize), Image.ANTIALIAS)
-                img.save(outfile, "JPEG")
+                img = img.resize((width,hsize), Image.ANTIALIAS)
+                img.save(os.path.join(output_path, outfile), "JPEG")
             except IOError:
                 print("cannot create thumbnail for '%s'" % infile)
 

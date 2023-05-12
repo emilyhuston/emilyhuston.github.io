@@ -10,9 +10,10 @@ img {
   max-width: 100%;
 }
 
-p {
-  line-height: 1.4em;
-  max-width: 620px;
+p, h3 {
+  line-height: 1.5em;
+  max-width: 650px;
+  font-size: 1.1em;
 }
 
 #landing {
@@ -24,8 +25,8 @@ p {
   justify-content: center;
   font-size: 1.8em;
   overflow: hidden;
-  background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.5)),
-              url(../assets/cover.jpg);
+  background: linear-gradient(rgba(0,0,0, 0.45), rgba(0,0,0, 0.45)),
+              url(../assets/cover.JPG);
   background-size: cover;
 }
 
@@ -43,13 +44,11 @@ p {
 #landing nav > a:active {
   margin: 1em;
   color: #eee;
-  text-decoration: none;
-  transition: all 0.1s;
-  border-bottom: 1px solid #eee;
+  text-decoration: underline;
 }
 
 #landing nav > a:hover {
-  border-bottom: 1px solid transparent;
+  text-decoration: none;
 }
 
 #main {
@@ -67,14 +66,7 @@ p {
 #main a:visited,
 #main a:hover,
 #main a:active {
-  color: #222;
-  text-decoration: none;
-  transition: all 0.1s;
-  border-bottom: 1px solid #222;
-}
-
-#main a:hover {
-  border-bottom: 1px solid transparent;
+  color: #555;
 }
 
 #main section {
@@ -93,6 +85,7 @@ p {
   font-family: 'Space Grotesk', serif;
   font-size: 1.8em;
   margin: 0;
+  font-weight: 500;
 }
 
 #main section > header > a,
@@ -133,18 +126,20 @@ footer a {
 }
 
 i {
-  transition: all 0.2s;
+  transition: all 0.1s;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
 }
 
 i:hover {
-  color: #777;
+  color: #222;
 }
 
 .crab {
   height: 25px;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 850px) {
   #landing {
     align-items: flex-start;
     justify-content: flex-start;

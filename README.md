@@ -47,6 +47,7 @@ See the [`utils`](/utils) directory for Python scripts that you can use to batch
 - Handle medium views which set text to left while centering photos which looks odd
 - Make CSS mobile first
 - Photos should be wider at 600px cutoff (use width and height props, thumbs 500px [but show at 300px for mid-sized displays], full images could be 2000 px wide)
+- Add links to external articles and projects in bio
 - Find out why smooth scrolling isn't working, or get rid of it completely
 - Consider trying to block context clicks on large photos
 - Consider moving social icons and copyright to footer

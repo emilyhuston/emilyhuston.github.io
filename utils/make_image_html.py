@@ -56,7 +56,7 @@ for infile in os.listdir(path):
         alt = alt_text[full_sized_name]
         full_path = html_path + full_sized_name
         small_path = html_path + infile
-        element = f"""          <a data-fslightbox="gallery" href="{full_path}">
+        element = f"""          <a data-fslightbox="gallery" href="{full_path}" data-type="image">
             <img alt="{alt}" src="{small_path}">
           </a>"""
         print(element)
